@@ -1,5 +1,6 @@
 const kirby = document.querySelector("#kirby");
 const coin = document.querySelector("#coin");
+const dragon = document.querySelector("#dragon");
 let collectSound1 = document.querySelector("#collect1");
 let collectSound2 = document.querySelector("#collect2");
 let collectSound3 = document.querySelector("#collect3");
@@ -11,11 +12,19 @@ kirby.style.left = 150;
 kirby.style.top = 300;
 kirby.style.width = 83 / 1.5;
 kirby.style.height = 100 / 1.5;
+kirby.style.zIndex = "1";
 
 coin.style.left = 600;
 coin.style.top = 100;
 coin.style.width = 40;
 coin.style.height = 40;
+coin.style.zIndex = "1";
+
+dragon.style.right = 100;
+dragon.style.top = 10;
+dragon.style.top = 10;
+dragon.style.transform = "scaleX(-1)";
+dragon.style.zIndex = "0";
 
 
 let keyMap = {39: false, 37: false, 38: false, 40: false};
@@ -198,6 +207,16 @@ const collisionDetection = () => {
     parseInt(kirby.style.height) + parseInt(kirby.style.top) > parseInt(coin.style.top)) {
          
         collectedNum++;
+        coin.src="assets/img/coin.gif";
+        coin.style.width = 40;
+        coin.style.height = 40;
+
+        if ((collectedNum + 1) % 10 == 0) {
+            
+            coin.src="assets/img/coin2.gif";
+            coin.style.width = 60;
+coin.style.height = 60;
+        }
         
         if (collectedNum % 10 == 0 && collectedNum != 0){
     

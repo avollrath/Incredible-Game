@@ -42,11 +42,7 @@ body {
   border-radius: 100%;
 }
 
-.container #kirby {
-  position: absolute;
-}
-
-.container #coin {
+.container #kirby, .container #coin, .container #dragon {
   position: absolute;
 }
 /*# sourceMappingURL=style.css.map */
