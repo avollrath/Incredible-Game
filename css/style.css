@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css?family=Slackey&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-image: url("../assets/img/bg.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.container #coins {
+  position: absolute;
+  top: 20px;
+  width: 100px;
+  text-align: center;
+  line-height: 100px;
+  height: 100px;
+  right: 70px;
+  text-transform: uppercase;
+  color: #fff;
+  font-family: 'Slackey', cursive;
+  font-size: 4rem;
+  background: #6992F2;
+  border-radius: 100%;
+}
+
+.container #kirby {
+  position: absolute;
+}
+
+.container #coin {
+  position: absolute;
+}
+/*# sourceMappingURL=style.css.map */
