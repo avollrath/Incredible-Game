@@ -1,6 +1,6 @@
 const kirby = document.querySelector("#kirby");
 const coin = document.querySelector("#coin");
-const dragon = document.querySelector("#dragon");
+const giraffe = document.querySelector("#giraffe");
 let collectSound1 = document.querySelector("#collect1");
 let collectSound2 = document.querySelector("#collect2");
 let collectSound3 = document.querySelector("#collect3");
@@ -20,11 +20,10 @@ coin.style.width = 40;
 coin.style.height = 40;
 coin.style.zIndex = "1";
 
-dragon.style.right = 100;
-dragon.style.top = 10;
-dragon.style.top = 10;
-dragon.style.transform = "scaleX(-1)";
-dragon.style.zIndex = "0";
+giraffe.style.right = 100;
+giraffe.style.top = 260;
+giraffe.style.height = 400;
+giraffe.style.zIndex = "0";
 
 
 
