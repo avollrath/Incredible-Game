@@ -27,11 +27,44 @@ dragon.style.transform = "scaleX(-1)";
 dragon.style.zIndex = "0";
 
 
-let keyMap = {39: false, 37: false, 38: false, 40: false};
+
+var Key = {
+    _pressed: {},
+  
+    LEFT: 37,
+    UP: 38,
+    RIGHT: 39,
+    DOWN: 40,
+    
+    isDown: function(keyCode) {
+      return this._pressed[keyCode];
+    },
+    
+    onKeydown: function(event) {
+      this._pressed[event.keyCode] = true;
+    },
+    
+    onKeyup: function(event) {
+      delete this._pressed[event.keyCode];
+    }
+  };
+
+window.addEventListener('keyup', function(event) { Key.onKeyup(event); }, false);
+window.addEventListener('keydown', function(event) { Key.onKeydown(event); }, false);
 
 
 
-document.addEventListener("keydown", (e) => {
+
+  setInterval(function(){
+   
+    if (Key.isDown(Key.UP)) move("up");
+    if (Key.isDown(Key.LEFT)) move("left");
+    if (Key.isDown(Key.DOWN)) move("down");
+    if (Key.isDown(Key.RIGHT)) move("right");
+     },10);
+
+
+let move = (direction) => {
 
     let moveKey = 0;
     let moveTime = 0 ;
@@ -43,10 +76,8 @@ document.addEventListener("keydown", (e) => {
    y = parseInt(kirby.style.top);
     
     
-   
 
-
-if (e.keyCode == 39)  {    //right
+if (direction == "right")  {    //right
 
     kirby.style.transform = "none";
     
@@ -57,12 +88,12 @@ if (e.keyCode == 39)  {    //right
 
 clearInterval(moveKey);
 moveKey = setInterval(function(){
-    x = x+(40 / frames);
+    x = x+(5 / frames);
     kirby.style.left = x + "px";      
 },fps);
     
     }
-else if (e.keyCode == 37)  {   //left
+else if (direction == "left")  {   //left
 
     kirby.style.transform = "scaleX(-1)";
     
@@ -73,12 +104,12 @@ else if (e.keyCode == 37)  {   //left
 
 clearInterval(moveKey);
 moveKey = setInterval(function(){
-    x = x-(40 / frames);
+    x = x-(5 / frames);
     kirby.style.left = x + "px";      
 },fps);
     
     }
-else if (e.keyCode == 38)  {   //up
+else if (direction == "up")  {   //up
     
     clearTimeout(moveTime);
     moveTime = setTimeout(function(){
@@ -87,12 +118,12 @@ else if (e.keyCode == 38)  {   //up
 
 clearInterval(moveKey);
 moveKey = setInterval(function(){
-    y = y - (40 / frames);
+    y = y - (5 / frames);
     kirby.style.top = y + "px";      
 },fps);
     
     }
-else if (e.keyCode == 40)  {   //down
+else if (direction == "down")  {   //down
     
     clearTimeout(moveTime);
     moveTime = setTimeout(function(){
@@ -101,101 +132,16 @@ else if (e.keyCode == 40)  {   //down
 
 clearInterval(moveKey);
 moveKey = setInterval(function(){
-    y = y + (40 / frames);
+    y = y + (5 / frames);
     kirby.style.top = y + "px";      
 },fps);
     
     }
 
-
-if (e.keyCode in keyMap) {
-        keyMap[e.keyCode] = true;
-        if (keyMap[38] && keyMap[37]) {  //up left
-          
-
-            kirby.style.transform = "scaleX(-1)";
-    
-            clearTimeout(moveTime);
-            moveTime = setTimeout(function(){
-            clearInterval(moveKey);
-        },second);        
-        
-        clearInterval(moveKey);
-        moveKey = setInterval(function(){
-            x = x-(40 / frames);
-            kirby.style.left = x + "px";  
-            y = y - (40 / frames);
-            kirby.style.top = y + "px";      
-        },fps);
-
-
-        }
-        
-        else if (keyMap[40] && keyMap[39]) {  // down right
-            
-            kirby.style.transform = "none";
-    
-            clearTimeout(moveTime);
-            moveTime = setTimeout(function(){
-            clearInterval(moveKey);
-        },second);        
-        
-        clearInterval(moveKey);
-        moveKey = setInterval(function(){
-            x = x+(40 / frames);
-            kirby.style.left = x + "px";  
-            y = y + (40 / frames);
-            kirby.style.top = y + "px";      
-        },fps);
-        }
-        
-        else if (keyMap[38] && keyMap[39]) { // up right
-     
-
-            kirby.style.transform = "none";
-    
-            clearTimeout(moveTime);
-            moveTime = setTimeout(function(){
-            clearInterval(moveKey);
-        },second);        
-        
-        clearInterval(moveKey);
-        moveKey = setInterval(function(){
-            x = x+(40 / frames);
-            kirby.style.left = x + "px";  
-            y = y - (40 / frames);
-            kirby.style.top = y + "px";      
-        },fps);
-
-
-        }else if (keyMap[40] && keyMap[37]) { // down left
-            kirby.style.transform = "scaleX(-1)";
-    
-            clearTimeout(moveTime);
-            moveTime = setTimeout(function(){
-            clearInterval(moveKey);
-        },second);        
-        
-        clearInterval(moveKey);
-        moveKey = setInterval(function(){
-            x = x-(40 / frames);
-            kirby.style.left = x + "px";  
-            y = y + (40 / frames);
-            kirby.style.top = y + "px";      
-        },fps);
-        }
-    }    
+}
 
 
 
-})
-
-
-document.addEventListener('keyup', function (e) {
-    if (e.keyCode in keyMap) {
-        keyMap[e.keyCode] = false;
-    }
-})
 
 
 const collisionDetection = () => {
