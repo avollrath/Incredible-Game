@@ -54,6 +54,9 @@ window.addEventListener('keydown', function(event) { Key.onKeydown(event); }, fa
 
 
 
+
+
+
   setInterval(function(){
    
     if (Key.isDown(Key.UP)) move("up");
