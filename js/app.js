@@ -20,7 +20,7 @@ coin.style.width = 40;
 coin.style.height = 40;
 coin.style.zIndex = "1";
 
-giraffe.style.right = 100;
+giraffe.style.right = 110;
 giraffe.style.top = 260;
 giraffe.style.height = 400;
 giraffe.style.zIndex = "0";
