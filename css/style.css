@@ -46,4 +46,10 @@ body {
 .container #kirby, .container #coin, .container #giraffe, .container #foreground, .container #cloud1, .container #cloud2, .container #cloud3 {
   position: absolute;
 }
+
+.container #foreground {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
 /*# sourceMappingURL=style.css.map */

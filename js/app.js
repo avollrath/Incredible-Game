@@ -36,7 +36,8 @@ giraffe.style.zIndex = "2";
 
 foreground.style.left = 0;
 foreground.style.bottom = 0;
-foreground.style.width = "2880px";
+foreground.style.width = "5760px";
+foreground.style.height = "760px";
 foreground.style.zIndex = "1";
 
 cloud1.style.left = 300;
@@ -65,7 +66,7 @@ setInterval(()=> {
 backgroundSpeed = backgroundSpeed -2;
 giraffeSpeed = giraffeSpeed -3;
 
-if (foreground.style.transform == "translateX(-1440px)") {
+if (foreground.style.transform == "translateX(-2880px)") {
 
     backgroundSpeed = 0;
     giraffeSpeed = 0;
