@@ -13,6 +13,7 @@ body {
 background-image: url("../assets/img/bg.png");
 background-size: cover;
 background-position: center;
+overflow: hidden;
 
 }
 
@@ -46,12 +47,14 @@ border-radius: 100%;
 
 }
 
-#kirby, #coin, #giraffe{
+#kirby, #coin, #giraffe, #foreground, #cloud1, #cloud2, #cloud3{
 
 position: absolute;
 
 
 }
+
+
 
 
 }

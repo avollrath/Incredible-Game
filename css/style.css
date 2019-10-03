@@ -10,6 +10,7 @@ body {
   background-image: url("../assets/img/bg.png");
   background-size: cover;
   background-position: center;
+  overflow: hidden;
 }
 
 .container {
@@ -42,7 +43,7 @@ body {
   border-radius: 100%;
 }
 
-.container #kirby, .container #coin, .container #giraffe {
+.container #kirby, .container #coin, .container #giraffe, .container #foreground, .container #cloud1, .container #cloud2, .container #cloud3 {
   position: absolute;
 }
 /*# sourceMappingURL=style.css.map */
