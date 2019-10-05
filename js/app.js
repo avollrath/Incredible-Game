@@ -37,7 +37,7 @@ giraffe.style.zIndex = "2";
 foreground.style.left = 0;
 foreground.style.bottom = 0;
 foreground.style.width = "5760px";
-foreground.style.height = "760px";
+foreground.style.height = "780px";
 foreground.style.zIndex = "1";
 
 cloud1.style.left = 300;
